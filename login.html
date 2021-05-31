@@ -14,10 +14,27 @@
         </style>
     <head>
         <form align="center"><table align="center"><tr><td>
-        Name: <input type="text"placeholder="only capital letters" name="user_name"><br><br>
-        Email Id: <input type="email" name="email_id"><br><br>
-            Password: <input type="password" name="password" placeholder="more than 8 characters"> <br><br>
-            <button onclick="window.location.href = 'http://127.0.0.1:49958/startfile.HTML';"><h4>Enter</h4></button>
+        Name: <input type="text"placeholder="only capital letters" name="user_name" id="name"><br><br>
+        Email Id: <input type="email" name="email_id" id="email"><br><br>
+            Password: <input type="password" name="password" placeholder="more than 8 characters" id="password"> <br><br>
+            <button onclick="sumit()"><h4>Enter</h4></button>
             </td></tr></table></form>
     </body>
+	<script>
+
+	function sumit(){
+		//alert("Hello");
+		
+		var name = document.getElementById("name").value;
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+		
+		if(name != "" && email != "" && password != "" && email.contains('@')){
+			window.location.href = 'http://127.0.0.1:49958/startfile.HTML';
+		}
+		else {
+			alert("Inputs cant be empty");
+		}
+	}
+	</script>
 </html>
